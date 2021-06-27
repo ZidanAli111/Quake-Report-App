@@ -25,6 +25,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.customtabs.CustomTabsIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -85,13 +86,13 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
                 Earthquake currentEarthquake = mAdapter.getItem(position);
 
                 // Convert the String URL into a URI object (to pass into the Intent constructor)
-                Uri earthquakeUri = Uri.parse(currentEarthquake.getUrl());
+
 
                 // Create a new intent to view the earthquake URI
-                Intent websiteIntent = new Intent(Intent.ACTION_VIEW, earthquakeUri);
+                CustomTabsIntent.Builder builder= new CustomTabsIntent.Builder();
+                 CustomTabsIntent customTabsIntent=builder.build();
+                 customTabsIntent.launchUrl(EarthquakeActivity.this,Uri.parse(currentEarthquake.mUrl));
 
-                // Send the intent to launch a new activity
-                startActivity(websiteIntent);
             }
         });
 

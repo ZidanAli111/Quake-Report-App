@@ -56,6 +56,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         // otherwise, if convertView is null, then inflate a new list item layout.
         /***
          * Inflate means reading a layout XML (often given as parameter) to translate them in Java code.
+         *e.g- here the earthquake_list_items.xml layout with be converted to a View (i.e- listItemView)
          * This process happens: in an activity (the main process) or a fragment.
        */
         View listItemView = convertView;

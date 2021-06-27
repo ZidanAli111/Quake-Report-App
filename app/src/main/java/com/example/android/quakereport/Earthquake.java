@@ -21,7 +21,7 @@ import android.widget.ListAdapter;
     private long mTimeInMilliseconds;
 
     /** Website URL of the earthquake */
-    private String mUrl;
+    public String mUrl;
 
     /**
      * Constructs a new {@link Earthquake} object.
